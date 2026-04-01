@@ -1,65 +1,170 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const featuredServices = [
+  {
+    num: "01",
+    title: "Business Process Improvement",
+    description:
+      "Evaluate how your business operates, identify waste and inefficiency, and build a better way forward.",
+  },
+  {
+    num: "02",
+    title: "Strategic Planning & Roadmapping",
+    description:
+      "Define where you're going, build the plan to get there, and execute with discipline.",
+  },
+  {
+    num: "03",
+    title: "Technology & IT Services",
+    description:
+      "Implement the right technology for your business — from infrastructure to software to AI integration.",
+  },
+  {
+    num: "04",
+    title: "Project Planning & Execution",
+    description:
+      "We don't just hand you a plan and walk away. We stay in it and execute alongside you.",
+  },
+];
+
+const differentiators = [
+  {
+    title: "Results-focused",
+    desc: "Every engagement is measured against real outcomes, not hours billed.",
+  },
+  {
+    title: "We execute with you",
+    desc: "We don't hand off a report and disappear. We're in it until it's done.",
+  },
+  {
+    title: "AI-native approach",
+    desc: "We leverage AI tools throughout our work to move faster and think sharper.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero */}
+      <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold tracking-widest text-[#E05A00] uppercase mb-6">
+              C7 Consulting & IT Services
+            </p>
+            <h1 className="text-5xl sm:text-6xl font-bold text-[#111111] leading-tight mb-4">
+              Strategy.
+              <br />
+              Technology.
+              <br />
+              Results.
+            </h1>
+            <p className="text-xl text-slate-500 font-medium mb-6">
+              Built to execute.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-xl">
+              We help businesses operate better, plan smarter, and implement the
+              right technology.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/services"
+                className="bg-[#E05A00] text-white font-semibold px-6 py-3 rounded hover:bg-[#C04A00] transition-colors"
+              >
+                View Our Services
+              </Link>
+              <Link
+                href="/contact"
+                className="border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded hover:border-[#111111] hover:text-[#111111] transition-colors"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Featured Services */}
+      <section className="bg-slate-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-[#111111] mb-3">
+              What We Do
+            </h2>
+            <p className="text-slate-600 max-w-xl">
+              From operations to technology to strategy — we cover the full
+              scope of what it takes to run and grow a business.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="text-xs font-bold text-[#E05A00] tracking-wider mb-3">
+                  {service.num}
+                </div>
+                <h3 className="font-semibold text-[#111111] mb-2 leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/services"
+              className="text-[#E05A00] font-semibold hover:underline text-sm"
+            >
+              See all 8 services &rarr;
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Why C7 */}
+      <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#111111] mb-12">Why C7?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {differentiators.map((item) => (
+              <div key={item.title}>
+                <div className="w-8 h-1 bg-[#E05A00] mb-4" />
+                <h3 className="font-semibold text-[#111111] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="bg-[#111111] py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Ready to get started?
+            </h2>
+            <p className="text-[#9CA3AF]">
+              Tell us what you&apos;re working on. We&apos;ll be direct with
+              you.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="bg-[#E05A00] text-white font-semibold px-6 py-3 rounded hover:bg-[#C04A00] transition-colors whitespace-nowrap"
+          >
+            Talk to Us
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
