@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background with slight rounding -->
+  <rect width="32" height="32" rx="4" fill="#111111"/>
+  <!-- C shape — silver -->
+  <path d="M3,2 L14,2 L14,7 L5,7 L5,25 L14,25 L14,30 L3,30 Q1,30 1,28 L1,4 Q1,2 3,2 Z" fill="#C0C8D4"/>
+  <!-- 7 shape — burnt orange, diagonal from far right -->
+  <path d="M17,2 L31,2 L31,8 L23,30 L17,30 L25,8 L17,8 Z" fill="#E05A00"/>
+</svg>
