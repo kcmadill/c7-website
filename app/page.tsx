@@ -68,16 +68,16 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/services"
+                href="/contact"
                 className="bg-[#E05A00] text-white font-semibold px-6 py-3 rounded hover:bg-[#C04A00] transition-colors"
               >
-                View Our Services
+                Get in Touch
               </Link>
               <Link
-                href="/contact"
+                href="/services"
                 className="border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded hover:border-[#111111] hover:text-[#111111] transition-colors"
               >
-                Contact Us
+                View Our Services
               </Link>
             </div>
           </div>
