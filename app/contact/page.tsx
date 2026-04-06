@@ -1,51 +1,9 @@
 "use client";
 
-import { useState } from "react";
-
-// TODO: Replace with your Formspree endpoint (free at formspree.io)
-// e.g. https://formspree.io/f/your-form-id
-const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
-
-type FormState = "idle" | "sending" | "success" | "error";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactPage() {
-  const [state, setState] = useState<FormState>("idle");
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setState("sending");
-
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setState("success");
-        setForm({ name: "", email: "", company: "", message: "" });
-      } else {
-        setState("error");
-      }
-    } catch {
-      setState("error");
-    }
-  };
+  const [state, handleSubmit] = useForm("mykblvrd");
 
   return (
     <>
@@ -104,12 +62,23 @@ export default function ContactPage() {
                   useful, not by locking you in.
                 </p>
               </div>
+              <div className="pt-4 border-t border-slate-200">
+                <p className="text-sm text-slate-500">
+                  Prefer email?{" "}
+                  <a
+                    href="mailto:operations@c7-cits.com"
+                    className="text-[#E05A00] font-medium hover:underline"
+                  >
+                    operations@c7-cits.com
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Right: Form */}
           <div>
-            {state === "success" ? (
+            {state.succeeded ? (
               <div className="border border-green-200 bg-green-50 rounded-lg p-8 text-center">
                 <div className="text-green-700 font-semibold text-lg mb-2">
                   Message sent.
@@ -130,14 +99,13 @@ export default function ContactPage() {
                     </label>
                     <input
                       id="name"
-                      name="name"
                       type="text"
+                      name="name"
                       required
-                      value={form.name}
-                      onChange={handleChange}
                       className="w-full border border-slate-300 rounded px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E05A00] focus:border-transparent"
                       placeholder="Your name"
                     />
+                    <ValidationError field="name" errors={state.errors} className="text-xs text-red-600 mt-1" />
                   </div>
                   <div>
                     <label
@@ -148,14 +116,13 @@ export default function ContactPage() {
                     </label>
                     <input
                       id="email"
-                      name="email"
                       type="email"
+                      name="email"
                       required
-                      value={form.email}
-                      onChange={handleChange}
                       className="w-full border border-slate-300 rounded px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E05A00] focus:border-transparent"
                       placeholder="you@company.com"
                     />
+                    <ValidationError field="email" errors={state.errors} className="text-xs text-red-600 mt-1" />
                   </div>
                 </div>
 
@@ -168,10 +135,8 @@ export default function ContactPage() {
                   </label>
                   <input
                     id="company"
-                    name="company"
                     type="text"
-                    value={form.company}
-                    onChange={handleChange}
+                    name="company"
                     className="w-full border border-slate-300 rounded px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E05A00] focus:border-transparent"
                     placeholder="Your company (optional)"
                   />
@@ -190,25 +155,20 @@ export default function ContactPage() {
                     name="message"
                     required
                     rows={5}
-                    value={form.message}
-                    onChange={handleChange}
                     className="w-full border border-slate-300 rounded px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E05A00] focus:border-transparent resize-none"
                     placeholder="Tell us what's going on and what you need help with."
                   />
+                  <ValidationError field="message" errors={state.errors} className="text-xs text-red-600 mt-1" />
                 </div>
 
-                {state === "error" && (
-                  <p className="text-sm text-red-600">
-                    Something went wrong. Please try again or email us directly.
-                  </p>
-                )}
+                <ValidationError errors={state.errors} className="text-sm text-red-600" />
 
                 <button
                   type="submit"
-                  disabled={state === "sending"}
+                  disabled={state.submitting}
                   className="w-full bg-[#E05A00] text-white font-semibold py-3 rounded hover:bg-[#C04A00] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {state === "sending" ? "Sending..." : "Send Message"}
+                  {state.submitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
