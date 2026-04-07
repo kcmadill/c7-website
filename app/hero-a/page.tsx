@@ -121,7 +121,7 @@ export default function HeroA() {
               href="/services"
               className="text-[#E05A00] font-semibold hover:underline text-sm"
             >
-              See all 8 services &rarr;
+              See all services &rarr;
             </Link>
           </div>
         </div>

@@ -73,35 +73,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership */}
-      <section className="bg-slate-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#111111] mb-10">
-            Leadership
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-8 items-start max-w-2xl">
-            <div className="w-20 h-20 rounded-full bg-[#111111] flex items-center justify-center text-white text-2xl font-bold shrink-0 border-2 border-[#E05A00]">
-              KC
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-[#111111] mb-1">
-                K.C. Madill
-              </h3>
-              <p className="text-sm font-semibold text-[#E05A00] mb-4">
-                Founder & Principal
-              </p>
-              <p className="text-slate-600 leading-relaxed text-sm">
-                K.C. brings a background in business operations, technology
-                implementation, and strategic planning. He founded C7 to deliver
-                the kind of consulting he always wished existed — direct,
-                execution-focused, and built for real results. He leads every
-                engagement personally and holds the work to a high standard.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Values */}
       <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
