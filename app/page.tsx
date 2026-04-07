@@ -21,9 +21,9 @@ const featuredServices = [
   },
   {
     num: "04",
-    title: "Project Planning & Execution",
+    title: "AI Integration & Adoption",
     description:
-      "We don't just hand you a plan and walk away. We stay in it and execute alongside you.",
+      "Identify where AI creates real value in your business and implement it practically and effectively.",
   },
 ];
 
