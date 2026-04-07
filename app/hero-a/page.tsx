@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-// OPTION A — Full homepage preview with dark hero
-// Header border will be adjusted to match when applied to the real site
+// Dark hero variant — identical content/layout to homepage, dark hero section only
 
 const featuredServices = [
   {
@@ -48,15 +47,7 @@ const differentiators = [
 export default function HeroA() {
   return (
     <>
-      {/* Preview nav */}
-      <div className="bg-[#E05A00] py-2 px-4 text-center text-xs text-white font-medium">
-        PREVIEW — Option A (Dark Hero) &nbsp;|&nbsp;{" "}
-        <Link href="/" className="underline hover:no-underline">
-          Back to current site
-        </Link>
-      </div>
-
-      {/* Dark Hero — flows seamlessly from dark header */}
+      {/* Hero — dark */}
       <section className="bg-[#111111] py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
