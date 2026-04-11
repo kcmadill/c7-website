@@ -83,8 +83,8 @@ export default function ContactPage() {
                   No commitment required
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  The first conversation is free. We earn your business by being
-                  useful, not by locking you in.
+                  Free consultation. We earn your business by being useful, not
+                  by locking you in.
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-200">
