@@ -1,9 +1,32 @@
 "use client";
 
 import { useForm, ValidationError } from "@formspree/react";
+import { useEffect, useState } from "react";
+
+const taglines = [
+  "Tell us what you're working on. We'll give you a straight answer.",
+  "Tell us what's broken. We'll tell you how to fix it.",
+  "Describe your challenge. We'll respond with a clear path forward.",
+  "Tell us where you're stuck. We'll give you an honest assessment.",
+  "What's holding your business back? Let's figure it out together.",
+  "No pitch. No fluff. Just tell us what you need.",
+];
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("mykblvrd");
+  const [taglineIndex, setTaglineIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setTaglineIndex((i) => (i + 1) % taglines.length);
+        setVisible(true);
+      }, 400);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -16,9 +39,11 @@ export default function ContactPage() {
           <h1 className="text-4xl font-bold text-[#111111] mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-slate-600 max-w-xl">
-            Tell us what you&apos;re working on. We&apos;ll give you a straight
-            answer.
+          <p
+            className="text-lg text-slate-600 max-w-xl transition-opacity duration-400"
+            style={{ opacity: visible ? 1 : 0 }}
+          >
+            {taglines[taglineIndex]}
           </p>
         </div>
       </section>
