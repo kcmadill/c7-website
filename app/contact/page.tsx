@@ -24,7 +24,7 @@ export default function ContactPage() {
         setTaglineIndex((i) => (i + 1) % taglines.length);
         setVisible(true);
       }, 400);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
