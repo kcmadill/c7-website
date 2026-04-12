@@ -29,16 +29,16 @@ const featuredServices = [
 
 const differentiators = [
   {
-    title: "Results-focused",
-    desc: "Every engagement is measured against real outcomes, not hours billed.",
+    title: "Enterprise thinking, without the enterprise price",
+    desc: "Real consulting value — strategy, execution, and results — without the bloated retainer.",
   },
   {
-    title: "We execute with you",
-    desc: "We don't hand off a report and disappear. We're in it until it's done.",
+    title: "We don't disappear after the presentation",
+    desc: "Strategy is just the start. We stay in the work through execution and beyond — because that's where results actually happen.",
   },
   {
-    title: "AI-native approach",
-    desc: "We leverage AI tools throughout our work to move faster and think sharper.",
+    title: "AI that works inside your business",
+    desc: "We build AI agents and workflows that run inside your business — handling research, analysis, drafting, and operations so your team can focus on what matters.",
   },
 ];
 
