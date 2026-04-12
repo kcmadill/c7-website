@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 40" width="184" height="80">
+  <!-- C shape — silver -->
+  <path d="M4,0 L36,0 L36,8 L9,8 L9,32 L36,32 L36,40 L4,40 Q0,40 0,36 L0,4 Q0,0 4,0 Z" fill="#C0C8D4"/>
+  <!-- 7 shape — burnt orange -->
+  <path d="M44,0 L88,0 L88,12 L52,40 L40,40 L76,12 L44,12 Z" fill="#E05A00"/>
+</svg>

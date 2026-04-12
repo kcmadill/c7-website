@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80" width="520" height="80">
+  <!-- Dark background -->
+  <rect width="520" height="80" fill="#111111"/>
+
+  <!-- C mark -->
+  <path d="M4,20 L36,20 L36,28 L9,28 L9,52 L36,52 L36,60 L4,60 Q0,60 0,56 L0,24 Q0,20 4,20 Z" fill="#C0C8D4"/>
+  <!-- 7 mark -->
+  <path d="M44,20 L88,20 L88,32 L52,60 L40,60 L76,32 L44,32 Z" fill="#E05A00"/>
+
+  <!-- Divider -->
+  <line x1="108" y1="24" x2="108" y2="56" stroke="#333333" stroke-width="1"/>
+
+  <!-- Company name -->
+  <text x="124" y="43" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF" dominant-baseline="middle">C7 Consulting</text>
+  <text x="124" y="62" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#9CA3AF" letter-spacing="1">&amp; IT Services</text>
+</svg>
