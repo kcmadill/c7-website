@@ -45,24 +45,24 @@ const differentiators = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+      {/* Hero — dark, flows seamlessly from header */}
+      <section className="bg-[#111111] py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
             <p className="text-xs font-bold tracking-widest text-[#E05A00] uppercase mb-6">
               C7 Consulting & IT Services
             </p>
-            <h1 className="text-5xl sm:text-6xl font-bold text-[#111111] leading-tight mb-4">
+            <h1 className="text-5xl sm:text-6xl font-bold text-white leading-tight mb-4">
               Strategy.
               <br />
               Technology.
               <br />
               Results.
             </h1>
-            <p className="text-xl text-slate-500 font-medium mb-6">
+            <p className="text-xl text-[#9CA3AF] font-medium mb-6">
               Built to execute.
             </p>
-            <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg text-[#6B7280] leading-relaxed mb-10 max-w-xl">
               We help businesses operate better, plan smarter, and implement the
               right technology.
             </p>
@@ -75,7 +75,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/services"
-                className="border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded hover:border-[#111111] hover:text-[#111111] transition-colors"
+                className="border border-[#333] text-[#9CA3AF] font-semibold px-6 py-3 rounded hover:border-white hover:text-white transition-colors"
               >
                 View Our Services
               </Link>
