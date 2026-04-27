@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
   const results = await Promise.allSettled([
     // Email via Resend
     resend.emails.send({
-      from: "C7 Website <onboarding@resend.dev>",
+      from: "C7 Website <operations@c7-cits.com>",
       to: TO_EMAIL,
       subject: `New inquiry from ${name}`,
       html: `
