@@ -43,8 +43,10 @@ export default function OGImage() {
           <div style={{ color: "#E05A00", fontSize: "14px", fontWeight: 700, letterSpacing: "4px", textTransform: "uppercase" }}>
             C7 Consulting & IT Services
           </div>
-          <div style={{ color: "#ffffff", fontSize: "80px", fontWeight: 700, lineHeight: 1.1 }}>
-            Strategy.<br />Technology.<br />Results.
+          <div style={{ color: "#ffffff", fontSize: "80px", fontWeight: 700, lineHeight: 1.1, display: "flex", flexDirection: "column" }}>
+            <span>Strategy.</span>
+            <span>Technology.</span>
+            <span>Results.</span>
           </div>
         </div>
 
