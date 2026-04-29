@@ -1,16 +1,9 @@
 import { Resend } from "resend";
-import { SNSClient, PublishCommand } from "@aws-sdk/client-sns";
+import twilio from "twilio";
 import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-
-const sns = new SNSClient({
-  region: process.env.AWS_REGION,
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-  },
-});
+const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 const TO_EMAIL = "operations@c7-cits.com";
 const TO_PHONE = "+18018670627";
@@ -39,25 +32,25 @@ export async function POST(req: NextRequest) {
       `,
     }),
 
-    // SMS via AWS SNS
-    sns.send(
-      new PublishCommand({
-        PhoneNumber: TO_PHONE,
-        Message: [
-          `New C7 inquiry`,
-          `From: ${name}${company ? ` @ ${company}` : ""}`,
-          `Email: ${email}`,
-          `Message: ${message.slice(0, 100)}${message.length > 100 ? "..." : ""}`,
-        ].join("\n"),
-      })
-    ),
+    // SMS via Twilio
+    twilioClient.messages.create({
+      to: TO_PHONE,
+      from: process.env.TWILIO_FROM_NUMBER,
+      body: [
+        `New C7 inquiry`,
+        `From: ${name}${company ? ` @ ${company}` : ""}`,
+        `Email: ${email}`,
+        `Message: ${message.slice(0, 100)}${message.length > 100 ? "..." : ""}`,
+      ].join("\n"),
+    }),
   ]);
 
   const emailOk = results[0].status === "fulfilled";
   const smsOk = results[1].status === "fulfilled";
 
-  if (!emailOk) console.error("Email failed:", results[0]);
-  if (!smsOk) console.error("SMS failed:", results[1]);
+  if (!emailOk) console.error("Email failed:", JSON.stringify(results[0]));
+  if (smsOk) console.log("SMS result:", JSON.stringify(results[1]));
+  if (!smsOk) console.error("SMS failed:", JSON.stringify(results[1]));
 
   return NextResponse.json({ ok: emailOk || smsOk });
 }
