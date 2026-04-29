@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const TO_EMAIL = "operations@c7-cits.com";
-const TO_PHONE = "+18018670627";
+const TO_PHONE = "+18018952270";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
