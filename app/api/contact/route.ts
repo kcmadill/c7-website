@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const TO_EMAIL = "operations@c7-cits.com";
-const TO_PHONE = "+18018952270";
+const TO_PHONES = ["+18018670627", "+18018952270"];
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -14,6 +14,15 @@ export async function POST(req: NextRequest) {
   if (!name || !email || !message) {
     return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 });
   }
+
+  const smsBody = [
+    `New C7 inquiry`,
+    `From: ${name}${company ? ` @ ${company}` : ""}`,
+    `Email: ${email}`,
+    `Message: ${message.slice(0, 100)}${message.length > 100 ? "..." : ""}`,
+  ].join("\n");
+
+  const twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
   const results = await Promise.allSettled([
     // Email via Resend
@@ -31,25 +40,24 @@ export async function POST(req: NextRequest) {
       `,
     }),
 
-    // SMS via Twilio
-    twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN).messages.create({
-      to: TO_PHONE,
-      from: process.env.TWILIO_FROM_NUMBER,
-      body: [
-        `New C7 inquiry`,
-        `From: ${name}${company ? ` @ ${company}` : ""}`,
-        `Email: ${email}`,
-        `Message: ${message.slice(0, 100)}${message.length > 100 ? "..." : ""}`,
-      ].join("\n"),
-    }),
+    // SMS via Twilio — send to both numbers
+    ...TO_PHONES.map(to =>
+      twilioClient.messages.create({
+        to,
+        from: process.env.TWILIO_FROM_NUMBER,
+        body: smsBody,
+      })
+    ),
   ]);
 
   const emailOk = results[0].status === "fulfilled";
-  const smsOk = results[1].status === "fulfilled";
+  const smsOk = results.slice(1).some(r => r.status === "fulfilled");
 
   if (!emailOk) console.error("Email failed:", JSON.stringify(results[0]));
-  if (smsOk) console.log("SMS result:", JSON.stringify(results[1]));
-  if (!smsOk) console.error("SMS failed:", JSON.stringify(results[1]));
+  results.slice(1).forEach((r, i) => {
+    if (r.status === "fulfilled") console.log(`SMS result ${i}:`, JSON.stringify(r));
+    else console.error(`SMS failed ${i}:`, JSON.stringify(r));
+  });
 
   return NextResponse.json({ ok: emailOk || smsOk });
 }
