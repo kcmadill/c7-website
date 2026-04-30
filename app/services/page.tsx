@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Consulting & IT Services",
   description:
-    "C7 offers business process improvement, strategic planning, technology, AI integration, and more.",
+    "Business process improvement, strategic planning, technology implementation, AI integration, and operations consulting. Hands-on services built to execute.",
 };
 
 const services = [
@@ -87,9 +87,9 @@ export default function ServicesPage() {
                 <div className="text-xs font-bold text-[#E05A00] tracking-wider mb-3">
                   {service.num}
                 </div>
-                <h2 className="text-xl font-bold text-[#111111] mb-3">
+                <h3 className="text-xl font-bold text-[#111111] mb-3">
                   {service.title}
-                </h2>
+                </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
                   {service.description}
                 </p>

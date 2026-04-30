@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About C7 Consulting & IT Services",
   description:
-    "C7 Consulting & IT Services — built around practical results, honest advice, and real execution.",
+    "C7 Consulting & IT Services is an AI-native consulting firm built around practical results, honest advice, and real execution. We partner with businesses to fix what's holding them back.",
 };
 
 const values = [
