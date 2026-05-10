@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { services } from "@/lib/services-data";
+import { posts } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://c7-cits.com";
@@ -10,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.85,
+  }));
+
+  const blogPages: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+    changeFrequency: "monthly",
+    priority: 0.75,
   }));
 
   return [
@@ -26,6 +34,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...servicePages,
+    {
+      url: `${base}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...blogPages,
     {
       url: `${base}/about`,
       lastModified: now,
