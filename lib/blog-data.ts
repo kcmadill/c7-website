@@ -321,6 +321,134 @@ If you're not sure where to start, start with the most time-consuming, repetitiv
   },
 ];
 
+  {
+    slug: "what-strategic-planning-actually-looks-like",
+    title: "What Strategic Planning Actually Looks Like in a Growing Business",
+    metaDescription:
+      "Most strategic plans fail not because they're bad plans — but because no one executes them. Here's what real strategic planning looks like for a growing business.",
+    date: "2026-04-24",
+    readTime: "6 min read",
+    category: "Strategy",
+    excerpt:
+      "Most strategic plans fail not because they're bad plans — but because no one executes them. Here's what the real work looks like.",
+    body: `Ask a leadership team if they have a strategic plan, and most will say yes. Ask them what's in it, and the answers get vague. Ask them what changed in the business because of it, and the room goes quiet.
+
+Strategic planning has a reputation problem. Not because strategy is bad — but because most strategic planning processes produce documents, not decisions. And documents don't change businesses.
+
+Here's what strategic planning actually looks like when it works.
+
+## The Problem With the Annual Offsite
+
+The most common strategic planning process looks like this: leadership team goes offsite for two days, fills a whiteboard with ideas, agrees on priorities, and comes home with a slide deck. Three months later, nothing has changed. Six months later, the deck is forgotten. Twelve months later, you do it again.
+
+This isn't a failure of strategy. It's a failure of design. The offsite produces alignment, but alignment isn't execution. Between "we agree this matters" and "we actually did it" is a gap that most planning processes never close.
+
+Real strategic planning isn't an event. It's a system.
+
+## What Makes a Plan Executable
+
+An executable strategic plan has five things that most plans don't:
+
+**Clear, measurable goals.** Not "grow revenue" or "improve customer satisfaction" — but specific, time-bound targets. "Grow revenue from $4M to $5.5M by December 31" is a goal. "Grow revenue" is a wish.
+
+**An honest prioritization.** Most strategic plans try to do too many things. Real strategy is about choosing what not to do as much as what to do. If everything is a priority, nothing is. A leadership team that can't say no to good ideas will never execute a great one.
+
+**Clear ownership.** Every goal on the plan needs one name next to it — not a team, not a department, one person who is accountable for results. Shared accountability is no accountability.
+
+**A realistic resource plan.** Strategy without resources is fiction. If your priorities require 20% more capacity than your team has, something needs to give — either the priorities, the timeline, or the resources. Pretending otherwise guarantees failure.
+
+**An operating cadence.** A plan that gets reviewed once a quarter is already behind. The best-run organizations have a weekly and monthly rhythm for reviewing progress, surfacing blockers, and making adjustments. Not to report status — to solve problems.
+
+## The Gap Between Strategy and Operations
+
+The most common failure point in strategic planning isn't the strategy itself. It's the gap between strategic priorities and day-to-day operations.
+
+Your team isn't failing to execute because they don't care. They're failing to execute because the strategic priorities are competing with an operational reality that nobody planned for. There are client fires, hiring problems, system failures, and a hundred other things that feel more urgent than the strategic initiative that's due in Q3.
+
+Closing this gap requires two things: ruthless prioritization (so the strategic work isn't constantly losing to the operational noise) and leadership that actively protects time and attention for the work that matters.
+
+## Quarterly Reviews That Actually Work
+
+Most quarterly business reviews are status reports. Here's what happened, here's why we're behind, here's what we're planning to do differently. Then you leave and do the same thing next quarter.
+
+A quarterly review that drives results is different. The question isn't "what happened?" — it's "what do we need to decide?" Every review should end with a short list of decisions made, priorities adjusted, and owners confirmed. If you leave a quarterly review without having made a decision, you've had a meeting, not a review.
+
+## When to Bring in Outside Help
+
+Strategic planning works best when the people in the room can be honest with each other — and with themselves. That's harder than it sounds. Leadership teams have politics, blind spots, and history. It's difficult to challenge a strategy that the CEO is personally invested in, or to surface a concern that might sound like disloyalty.
+
+Outside facilitation is most valuable when the leadership team needs to make hard prioritization decisions, when there's significant disagreement about direction, or when past planning efforts haven't produced results and something needs to change about the process itself.
+
+The facilitator's job isn't to build the strategy. It's to create the conditions where the leadership team can build a better strategy than they'd build on their own — and to ask the questions that are too uncomfortable to ask internally.
+
+## The Measure of a Good Plan
+
+A good strategic plan isn't a document. It's a set of decisions that change how the business operates.
+
+If your leadership team finishes a planning cycle and goes back to working exactly the way they did before — the same meetings, the same priorities, the same resource allocation — the plan failed. Not because the strategy was wrong, but because it never touched the actual operating system of the business.
+
+The test of a strategic plan is simple: six months from now, can you point to specific decisions, changes, and results that happened because of the plan? If yes, the process worked. If not, something needs to change about how you plan.`,
+  },
+  {
+    slug: "hidden-cost-of-bad-vendor-decisions",
+    title: "The Hidden Cost of a Bad Vendor Decision",
+    metaDescription:
+      "A bad software or services vendor doesn't just cost money — it costs time, morale, and momentum. Here's what bad vendor decisions actually cost and how to avoid them.",
+    date: "2026-04-20",
+    readTime: "5 min read",
+    category: "Technology",
+    excerpt:
+      "A bad vendor decision doesn't just cost money — it costs time, morale, and momentum. Most businesses don't calculate the real price until it's too late.",
+    body: `Every business has at least one vendor story that ends with "never again." A software platform that looked great in the demo and was unusable in practice. A services firm that overpromised and underdelivered. A contract that seemed reasonable until you tried to get out of it.
+
+These decisions are expensive in ways that most businesses never fully account for. The invoice is the smallest part of the cost.
+
+## What a Bad Vendor Decision Actually Costs
+
+**Direct costs** are the obvious ones: the subscription fee, the implementation cost, the consulting hours, the hardware. These are real, and they're painful. But they're usually not the biggest cost.
+
+**Switching costs** are what lock you in once you realize you made the wrong choice. Migrating data out of a platform you hate. Retraining a team that just learned the wrong system. Rebuilding integrations. Negotiating an exit from a contract that was written by the vendor's lawyers. By the time you're ready to switch, you're often a year or more into a bad decision, and the exit costs are significant.
+
+**Productivity costs** are what your team loses while they're fighting a system that doesn't work. Workarounds, manual steps that should be automated, time spent on support tickets, and the slow erosion of confidence that comes from using tools that make your job harder. These costs are invisible on a budget sheet but show up in output, morale, and turnover.
+
+**Opportunity costs** are what you didn't build while you were managing a bad vendor relationship. The integration you couldn't prioritize because the system couldn't support it. The report you couldn't run because the data was trapped in the wrong format. The initiative that got delayed because the vendor's implementation timeline slipped by six months.
+
+**Decision costs** are what it takes to make the next decision — because now your team is skeptical of any new tool, any new vendor, any new initiative. Bad vendor decisions erode organizational confidence in ways that make future decisions harder and slower.
+
+## Why Bad Vendor Decisions Happen
+
+Most bad vendor decisions trace back to the same root causes:
+
+**Deciding under pressure.** A contract is expiring, a problem needs solving, or someone in leadership wants a decision made. The evaluation gets compressed, requirements don't get defined, and the team ends up buying what's available rather than what fits.
+
+**Letting vendors define the requirements.** Vendors are good at showing you why you need what they sell. If you go into vendor conversations without your own requirements documented, you'll end up evaluating vendors against their strengths rather than your needs.
+
+**Buying the demo, not the product.** Demos are optimized for the best case. They show you the polished workflow, the clean data, the features that work perfectly. They don't show you the edge cases, the support queue, the configuration complexity, or what happens when something goes wrong.
+
+**Skipping references.** References from the vendor are always going to be positive — that's why the vendor gave them to you. The useful questions are the ones the vendor can't prepare the reference for: what went wrong during implementation, what they wish they'd known before buying, whether they'd make the same decision again.
+
+**Not planning the implementation.** A tool is only as good as its adoption. A platform that your team doesn't use — or uses inconsistently — produces bad data, creates compliance risk, and doesn't deliver the value you paid for. Implementation planning should be part of the buying decision, not an afterthought after you've signed.
+
+## The Procurement Process That Prevents This
+
+The businesses that make consistently good vendor decisions don't rely on better instincts. They rely on a better process.
+
+That process starts before any vendor conversations — with a clear definition of requirements, a realistic budget that includes total cost of ownership, and a decision criteria framework that everyone on the buying team agrees on before anyone sees a demo.
+
+It continues with a structured evaluation: the same questions asked of every vendor, a scripted demo that covers your specific requirements rather than the vendor's favorite features, and reference calls that go beyond the prepared talking points.
+
+It ends with a contract that protects your interests — clear SLAs, data portability rights, exit provisions, and pricing that's locked for the duration of the term.
+
+This process takes more time upfront. It takes significantly less time than recovering from a bad decision.
+
+## The Question to Ask Before You Buy
+
+Before you sign any significant vendor contract, ask yourself: if this turns out to be the wrong decision, how long will it take us to get out, and what will it cost?
+
+If you can't answer that question before you sign, you haven't done enough due diligence. The best time to understand your exit options is before you're in the contract — not when you're desperate to leave.`,
+  },
+];
+
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug);
 }
