@@ -1,62 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { services } from "@/lib/services-data";
 
 export const metadata: Metadata = {
   title: "Consulting & IT Services",
   description:
     "Business process improvement, strategic planning, technology implementation, AI integration, and operations consulting. Hands-on services built to execute.",
 };
-
-const services = [
-  {
-    num: "01",
-    title: "Business Process Improvement",
-    description:
-      "Evaluate how your business operates, identify waste and inefficiency, and help you build a better way forward. We map your current state, find the gaps, and deliver actionable improvements — not just recommendations.",
-  },
-  {
-    num: "02",
-    title: "Strategic Planning & Roadmapping",
-    description:
-      "Define where you're going, build the plan to get there, and execute with discipline. Whether you're setting annual priorities or navigating a major shift, we build the roadmap and hold the line.",
-  },
-  {
-    num: "03",
-    title: "Technology & IT Services",
-    description:
-      "Implement the right technology for your business — from infrastructure to software to AI integration. We assess your current stack, identify gaps, and build or source the right solutions.",
-  },
-  {
-    num: "04",
-    title: "Project Planning & Execution",
-    description:
-      "We don't just hand you a plan and walk away. We stay in it and execute alongside you. From kickoff to completion, we manage timelines, dependencies, and deliverables so things actually get done.",
-  },
-  {
-    num: "05",
-    title: "Operations Consulting",
-    description:
-      "Finance, HR, sales, marketing — no matter the function, we assess how it's operating and build a better version of it. Whether you're scaling fast or fixing what's broken, we bring structure and discipline to every part of your business.",
-  },
-  {
-    num: "06",
-    title: "Procurement & Vendor Solutions",
-    description:
-      "Find, evaluate, and onboard the right business and technology solutions for your needs. We manage the vendor process so you get the right fit at the right price — without the guesswork.",
-  },
-  {
-    num: "07",
-    title: "Asset & Systems Integration",
-    description:
-      "Acquired a new business or platform? We manage the integration so nothing falls through the cracks. From data migration to workflow alignment, we ensure your systems and teams work as one.",
-  },
-  {
-    num: "08",
-    title: "AI Integration & Adoption",
-    description:
-      "Identify where AI creates real value in your business and implement it practically and effectively. We cut through the noise and help you adopt AI in ways that actually move the needle.",
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -80,20 +30,24 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.num}
-                className="border border-slate-200 rounded-lg p-8 hover:shadow-md transition-shadow"
+                href={`/services/${service.slug}`}
+                className="border border-slate-200 rounded-lg p-8 hover:shadow-md hover:border-slate-300 transition-all group block"
               >
                 <div className="text-xs font-bold text-[#E05A00] tracking-wider mb-3">
                   {service.num}
                 </div>
-                <h3 className="text-xl font-bold text-[#111111] mb-3">
+                <h3 className="text-xl font-bold text-[#111111] mb-3 group-hover:text-[#E05A00] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
-                  {service.description}
+                  {service.tagline}
                 </p>
-              </div>
+                <span className="inline-block mt-4 text-xs font-semibold text-[#E05A00] tracking-wide uppercase">
+                  Learn more →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
