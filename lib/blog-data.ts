@@ -319,8 +319,6 @@ AI will be a meaningful competitive advantage for some businesses and a costly d
 
 If you're not sure where to start, start with the most time-consuming, repetitive, rule-based work in your business. That's where the return on investment is clearest, and where the implementation risk is lowest.`,
   },
-];
-
   {
     slug: "what-strategic-planning-actually-looks-like",
     title: "What Strategic Planning Actually Looks Like in a Growing Business",
