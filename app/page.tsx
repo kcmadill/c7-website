@@ -1,26 +1,38 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { posts, formatDate } from "@/lib/blog-data";
+
+export const metadata: Metadata = {
+  title: "C7 Consulting & IT Services | Strategy. Technology. Results.",
+  description:
+    "C7 helps businesses operate better, plan smarter, and implement the right technology. Hands-on consulting and IT services built to execute — not just advise.",
+};
 
 const featuredServices = [
   {
     num: "01",
+    slug: "business-process-improvement",
     title: "Business Process Improvement",
     description:
       "Evaluate how your business operates, identify waste and inefficiency, and build a better way forward.",
   },
   {
     num: "02",
+    slug: "strategic-planning",
     title: "Strategic Planning & Roadmapping",
     description:
       "Define where you're going, build the plan to get there, and execute with discipline.",
   },
   {
     num: "03",
+    slug: "technology-it-services",
     title: "Technology & IT Services",
     description:
       "Implement the right technology for your business — from infrastructure to software to AI integration.",
   },
   {
-    num: "04",
+    num: "08",
+    slug: "ai-integration-adoption",
     title: "AI Integration & Adoption",
     description:
       "Identify where AI creates real value in your business and implement it practically and effectively.",
@@ -43,9 +55,13 @@ const differentiators = [
 ];
 
 export default function HomePage() {
+  const recentPosts = [...posts]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 3);
+
   return (
     <>
-      {/* Hero — dark, flows seamlessly from header */}
+      {/* Hero */}
       <section className="bg-[#111111] py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
@@ -98,20 +114,21 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredServices.map((service) => (
-              <div
-                key={service.title}
-                className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md hover:border-slate-300 transition-all group block"
               >
                 <div className="text-xs font-bold text-[#E05A00] tracking-wider mb-3">
                   {service.num}
                 </div>
-                <h3 className="font-semibold text-[#111111] mb-2 leading-snug">
+                <h3 className="font-semibold text-[#111111] mb-2 leading-snug group-hover:text-[#E05A00] transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="mt-8">
@@ -119,7 +136,7 @@ export default function HomePage() {
               href="/services"
               className="text-[#E05A00] font-semibold hover:underline text-sm"
             >
-              See all services &rarr;
+              See all 8 services &rarr;
             </Link>
           </div>
         </div>
@@ -141,6 +158,52 @@ export default function HomePage() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Blog Posts */}
+      <section className="bg-slate-50 py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold text-[#111111] mb-3">
+              From the Blog
+            </h2>
+            <p className="text-slate-600 max-w-xl">
+              Practical thinking on operations, strategy, and technology —
+              written for business owners who want straight answers.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {recentPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block bg-white border border-slate-200 rounded-lg p-6 hover:shadow-md hover:border-slate-300 transition-all"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold text-[#E05A00] uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                  <span className="text-slate-300 text-xs">·</span>
+                  <span className="text-xs text-slate-500">{formatDate(post.date)}</span>
+                </div>
+                <h3 className="font-semibold text-[#111111] leading-snug mb-2 group-hover:text-[#E05A00] transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {post.excerpt}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/blog"
+              className="text-[#E05A00] font-semibold hover:underline text-sm"
+            >
+              Read all posts &rarr;
+            </Link>
           </div>
         </div>
       </section>
